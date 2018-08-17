@@ -1,0 +1,43 @@
+.modalArea{
+  height: 100%;
+  width: 100%;
+}
+
+.formCreator {
+    padding: 10px 15px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+  }
+  
+  .formCreator:hover {background-color: #463e8e}
+  
+  .formCreator:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .AppButton {
+    padding: 10px 15px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-color: #e7e7e7;
+    color: black;
+  }
+  
+  .AppButton:hover {
+    background: #e7e7e7;
+  }
+  #div1 {
+    width: 130px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
