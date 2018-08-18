@@ -46,17 +46,12 @@ export class ModalBasicComponent implements OnInit {
   goals =[];
 
   transferDataSuccess($event: any) {
-      
       this.receivedData.push($event);
       this.goalText=$event.dragData.msg;
       this.goals.push(this.goalText);
       this.goalText=''; 
-      
-    }
- 
-  
-  ngOnInit() {
-
   }
+ 
+  ngOnInit() {}
 
 }
