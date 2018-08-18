@@ -32,9 +32,15 @@ export class ModalBasicComponent implements OnInit {
     }
   }
 
-  transferData1: Object= {id:1,msg:'button'};
-  transferData2: Object = {id:2,msg:'textEditor'};
-  transferData3: Object = {id:2,msg:'checkBox'};
+  transferData1: Object= {id:1, msg:'button'};
+  transferData2: Object = {id:2, msg:'textEditor'};
+  transferData3: Object = {id:3, msg:'checkBox'};
+  transferData4: Object= {id:4, msg:'select'};
+  transferData5: Object= {id:5, msg:'text2'};
+  transferData6: Object= {id:6, msg:'radio'};
+  transferData7: Object= {id:7, msg:'fileInput'};
+  transferData8: Object= {id:8, msg:'dateOfBirth'};
+  transferData9: Object= {id:9, msg:'textArea'};
   receivedData: Array<any> = [];
   goalText:string = '';
   goals =[];

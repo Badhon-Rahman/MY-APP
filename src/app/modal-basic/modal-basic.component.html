@@ -11,26 +11,26 @@
       <div class="col">
         <ul class="list-group">
           <li class="list-group-item">
-            <div class="col-sm-3">
+            <div class="col-md-10">
               <div class="panel panel-success">
                   <div class="panel-body">
                       <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData1">
                           <div class="panel-body">
-                            
-                              <button (click)="buttonData()" id="button" type="button" class="AppButton btn-md">Button</button>
-                        
+                            <label>Button :</label>  
+                            <button (click)="buttonData()" id="button" type="button" class="AppButton btn-md">Button</button>
                           </div>
                       </div>
                   </div>
               </div>
-          </div>
+            </div>
           </li>
           <li class="list-group-item">
-            <div class="col-sm-3">
+            <div class="col-md-10">
               <div class="panel panel-success">
                   <div class="panel-body">
                       <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData2">
                           <div class="panel-body">
+                              <label>Text :</label>
                               <input type="text" placeholder="Input Text">
                           </div>
                       </div>
@@ -40,13 +40,13 @@
           </li>
         
           <li class="list-group-item">
-              <div class="col-sm-3">
+              <div class="col-md-10">
                   <div class="panel panel-success">
                       <div class="panel-body">
                           <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData3">
                               <div class="panel-body">
-                                
-                                  <div class="form-check">
+                                    <label>Check Box :</label>
+                                    <div class="form-check">
                                       <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                       <label class="form-check-label" for="defaultCheck1">
                                         Checkbox
@@ -57,9 +57,7 @@
                                       <label class="form-check-label" for="defaultCheck2">
                                         Disabled 
                                       </label>
-                                  </div>
-                                    
-                            
+                                    </div>
                               </div>
                           </div>
                       </div>
@@ -67,35 +65,55 @@
               </div>
           </li>
           <li class="list-group-item" >
-            <div class="textArea">
-              <textarea rows="3" cols="10">
-                 Text Area
-              </textarea>
-          </div>
-          </li>
-            <li class="list-group-item">
-              <form>
-                  <div class="form-group">
-                    <label for="dateOfBirth">Date of birth</label>
-                    <div class="input-group">
-                      <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
-                          <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                        </button>
+              <div class="col-md-10">
+                  <div class="panel panel-success">
+                      <div class="panel-body">
+                          <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData9">
+                              <div class="panel-body">
+                                  <label>Text Area :</label>
+                                  <div class="textArea">
+                                      <textarea rows="3" cols="10">
+                                         Write here...
+                                      </textarea>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                    </div>
                   </div>
-                </form>
-            </li>
+              </div>  
+          </li>
+          <li class="list-group-item">
+              <div class="col-md-12">
+                  <div class="panel panel-success">
+                      <div class="panel-body">
+                          <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData8">
+                              <div class="panel-body">
+                                  <form>
+                                      <div class="form-group">
+                                        <label for="dateOfBirth">Date of birth</label>
+                                        <div class="input-group">
+                                          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                                          <div class="input-group-append">
+                                            <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+                                              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>   
+          </li>
         </ul>  
       </div>
         <div class="col">
           <div class="row">
-         
             <div class="col-sm-3">
                 <div dnd-droppable class="panel panel-info" (onDropSuccess)="transferDataSuccess($event)">
-                   <div class="panel-heading"><textarea cols="6" rows="6">Content Drop Here... (Items:{{receivedData.length}})</textarea></div>
+                   <div class="panel-heading"><textarea cols="30" rows="5">Drop Component Here... (Items:{{receivedData.length}})</textarea></div>
                     <div class="panel-body">
                       <div [hidden]="!receivedData.length > 0" *ngFor="let data of receivedData">  
                       
@@ -103,21 +121,73 @@
                     </div>
                 </div>
             </div>
-          </div>        
-          
+          </div>             
           <div *ngFor="let goal of goals">
               <div [ngSwitch]="goal">
                   <div *ngSwitchCase="'button'">
-                      <button type="button">Button</button>
+                      <button (click)="buttonData()" id="button" type="button" class="AppButton btn-md">Button</button>
                   </div> 
+                  <div *ngSwitchCase="'dateOfBirth'">
+                      <form>
+                          <div class="form-group">
+                            <label for="dateOfBirth">Date of birth</label>
+                            <div class="input-group">
+                              <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+                                  <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                      </form>
+                  </div> 
+                  <div *ngSwitchCase="'textArea'">
+                      <div class="textArea">
+                          <label>Text Area :</label>
+                          <textarea rows="3" cols="10">
+                             Write here...
+                          </textarea>
+                      </div>
+                     
+                  </div>
                   <div *ngSwitchCase="'textEditor'">
+                      <label>Text :</label>
                       <input type="text" placeholder="Input Text ">
                   </div>
+                  <div *ngSwitchCase="'fileInput'">
+                      <div class="form-group">
+                          <label for="exampleFormControlFile1">File input</label>
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                      </div>
+                  </div>
+                  <div *ngSwitchCase="'radio'">
+                      <label>Radio Button :</label>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                          <label class="form-check-label" for="exampleRadios1">
+                            Choice 1
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                          <label class="form-check-label" for="exampleRadios2">
+                           Choice 2
+                          </label>
+                        </div>
+                        <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                          <label class="form-check-label" for="exampleRadios3">
+                            No choice 
+                          </label>
+                        </div>
+                  </div>
                   <div *ngSwitchCase="'checkBox'">
+                      <label>Check Box :</label>
                       <div class="form-check">
                           <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                           <label class="form-check-label" for="defaultCheck1">
-                            Checkbox
+                            Checkable
                           </label>
                         </div>
                         <div class="form-check">
@@ -126,66 +196,128 @@
                             Disabled 
                           </label>
                       </div>
-                        
                   </div>
-               </div>           
-          </div>   
-                
-                
+                  <div *ngSwitchCase="'text2'">
+                      
+                      <div class="row">
+                          <label>Text 1:</label>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="text 1">
+                          </div>
+                          <label>Text 2:</label>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="text 2">
+                          </div>
+                      </div>
+                  </div> 
+                  <div *ngSwitchCase="'select'">
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Select one</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Dhaka</option>
+                        <option>Chittagong</option>
+                        <option>Rajshahi</option>
+                        <option>Khulna</option>
+                        <option>Sylhet</option>
+                      </select>
+                    </div>
+                </div>
+              </div>           
+          </div>       
     `   </div>
         <div class="col">
             <ul class="list-group">
               <li class="list-group-item">
-                <div class="row">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="text 1">
+                  <div class="col-md-14">
+                      <div class="panel panel-success">
+                          <div class="panel-body">
+                              <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData5">
+                                  <div class="panel-body">
+                                      <div class="row">
+                                          <label>Text 1:</label>
+                                          <div class="col">
+                                            <input type="text" class="form-control" placeholder="text 1">
+                                          </div>
+                                          <label>Text 2:</label>
+                                          <div class="col">
+                                            <input type="text" class="form-control" placeholder="text 2">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="text 2">
+              </li>
+              <li class="list-group-item">
+                  <div class="col-md-10">
+                      <div class="panel panel-success">
+                          <div class="panel-body">
+                              <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData7">
+                                  <div class="panel-body">
+                                      <div class="form-group">
+                                          <label for="exampleFormControlFile1">File input</label>
+                                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div> 
+                      </div>
+                  </div>
+              </li>
+              <li class="list-group-item">
+                  <div class="col-md-10">
+                      <div class="panel panel-success">
+                          <div class="panel-body">
+                              <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData6">
+                                  <div class="panel-body">
+                                      <div class="form-check">
+                                          <label>Radio Button :</label>
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                          <label class="form-check-label" for="exampleRadios1">
+                                             Choice 1 
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                          <label class="form-check-label" for="exampleRadios2">
+                                           Choice 2
+                                          </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                                          <label class="form-check-label" for="exampleRadios3">
+                                            No choice
+                                          </label>
+                                        </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li class="list-group-item">
+                <div class="col-md-10">
+                  <div class="panel panel-success">
+                      <div class="panel-body">
+                          <div class="panel panel-default" dnd-draggable [dragEnabled]="true" [dragData]="transferData4">
+                              <div class="panel-body">
+                                <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Select one</label>
+                                  <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>Dhaka</option>
+                                      <option>Chittagong</option>
+                                      <option>Rajshahi</option>
+                                      <option>Khulna</option>
+                                      <option>Sylhet</option>
+                                  </select>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </div>  
               </li>
-              <li class="list-group-item">
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">File input</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="AppButton btn-md">Button</button>
-              </li>
-              <li class="list-group-item">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                  <label class="form-check-label" for="exampleRadios1">
-                     Radio
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
-                   Radio 2
-                  </label>
-                </div>
-                <div class="form-check disabled">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-                  <label class="form-check-label" for="exampleRadios3">
-                    Disabled 
-                  </label>
-                </div>
-              </li>
-                <li class="list-group-item">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                  </div>
-                </li>
             </ul>  
           </div>
       </div>
